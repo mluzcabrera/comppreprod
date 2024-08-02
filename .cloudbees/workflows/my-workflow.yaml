@@ -15,3 +15,24 @@ jobs:
         run: |
           sleep 10
           echo "hello world"
+          build:
+  build2:
+    needs: build
+    steps:
+      - name: Say hello
+        uses: docker://golang:1.20.3-alpine3.17
+        shell: sh
+        run: |
+          sleep 10
+          echo "hello world"
+          build:
+  build3:
+    needs: build2
+    steps:
+      - name: Say hello
+        uses: docker://golang:1.20.3-alpine3.17
+        shell: sh
+        run: |
+          sleep 10
+          echo "hello world"
+          build:
