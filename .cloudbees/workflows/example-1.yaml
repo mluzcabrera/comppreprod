@@ -17,8 +17,5 @@ jobs:
        uses: docker://alpine:3.13
        shell: sh
        run: |
-          echo "Starting deployment..."
-          # Example deployment command using the provided string parameter
-          ./deploy.sh --version ${inputs.deployment_version} --env ${inputs.environment}
-          echo "Deployment of version ${inputs.deployment_version} to ${inputs.environment} completed successfully"
+          echo "Deployment of version ${{inputs.Deployment_version}}"
 
