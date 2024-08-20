@@ -27,7 +27,7 @@ jobs:
         uses: docker://golang:1.20.3-alpine3.17
         shell: sh
         run: |
-          echo "hello world"
+          echo " ${{ inputs.Stringparam }}"
   build2:
     needs: build
     steps:
@@ -35,7 +35,7 @@ jobs:
         uses: docker://golang:1.20.3-alpine3.17
         shell: sh
         run: |
-          echo "hello world"
+          echo " ${{ inputs.Numberparam }}"
   build3:
     needs: build2
     steps:
@@ -43,4 +43,12 @@ jobs:
         uses: docker://golang:1.20.3-alpine3.17
         shell: sh
         run: |
-          echo "hello world"
+          echo " ${{ inputs.Boolparam }}"
+  build4:
+    needs: build3
+    steps:
+      - name: Say hello
+        uses: docker://golang:1.20.3-alpine3.17
+        shell: sh
+        run: |
+          echo " ${{ inputs.Choiceparam }}"
