@@ -9,9 +9,6 @@ on:
         default: default name
         required: true
         description: name
-  push:
-    branches:
-      - main
 jobs:
   build:
     steps:
