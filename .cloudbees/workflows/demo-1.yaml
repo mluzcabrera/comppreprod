@@ -1,0 +1,33 @@
+apiVersion: automation.cloudbees.io/v1alpha1
+kind: workflow
+name: Demo 1
+on:
+  workflow_dispatch:
+    inputs:
+      Release_name:
+        type: string
+        required: true
+        description: Release name
+      Target_env:
+        type: choice
+        options:
+          - dev
+          - pre-prod
+          - prod
+        default: dev
+        required: true
+        description: target environment
+      Artifact_build_version:
+        type: number
+        description: Build version
+      smartdeploy:
+        type: boolean
+        default: true
+jobs:
+  build:
+    steps:
+      - name: Say hello
+        uses: docker://golang:1.20.3-alpine3.17
+        shell: sh
+        run: |
+          echo "Release ${{ inputs.Release_name}} Deploying artifact ${{ inputs.Artifact_build_version}}  to environment ${{ inputs.Target_env}} with smartdeploy option  ${{ inputs.smartdeploy }}"
