@@ -11,3 +11,11 @@ jobs:
           echo "hello world"
 on:
   workflow_dispatch:
+    inputs:
+      adfas:
+        type: string
+        default: |-
+          asdf
+          asdf
+          asdf
+        description: asdfa
