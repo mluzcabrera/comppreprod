@@ -1,6 +1,6 @@
 apiVersion: automation.cloudbees.io/v1alpha1
 kind: workflow
-name: Demo 2
+name: Demo 4
 on:
   workflow_dispatch:
     inputs:
