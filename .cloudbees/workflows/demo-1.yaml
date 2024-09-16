@@ -23,6 +23,9 @@ on:
       smartdeploy:
         type: boolean
         default: true
+  push:
+    branches:
+      - main
 jobs:
   build:
     steps:
