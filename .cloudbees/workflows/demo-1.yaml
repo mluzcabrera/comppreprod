@@ -23,11 +23,6 @@ on:
       smartdeploy:
         type: boolean
         default: true
-  push:
-    branches:
-      - main
-  schedule:
-    - cron: 0 10 * * *
 jobs:
   build:
     steps:
