@@ -23,6 +23,7 @@ on:
       smartdeploy:
         type: boolean
         default: true
+        description: desc
 jobs:
   build:
     steps:
