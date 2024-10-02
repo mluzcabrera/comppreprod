@@ -9,3 +9,11 @@ jobs:
         shell: sh
         run: |
           echo "hello schedule"
+on:
+  workflow_dispatch:
+    inputs:
+      chice:
+        type: choice
+        options:
+          - a
+        description: asdf
