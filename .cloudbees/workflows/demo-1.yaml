@@ -16,4 +16,5 @@ on:
         type: choice
         options:
           - a
-        description: asdf
+        default: ""
+        description: asdf this is the description, show it
