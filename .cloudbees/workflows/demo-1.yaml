@@ -3,7 +3,7 @@ kind: workflow
 name: Demo 1
 on:
   schedule:
-    - cron: 24 * * * *
+    - cron: 28 * * * *
 jobs:
   build:
     steps:
@@ -11,4 +11,4 @@ jobs:
         uses: docker://golang:1.20.3-alpine3.17
         shell: sh
         run: |
-          echo "Release ${{ inputs.Release_name}} Deploying artifact ${{ inputs.Artifact_build_version}}  to environment ${{ inputs.Target_env}} with smartdeploy option  ${{ inputs.smartdeploy }}"
+          echo "hello schedule"
