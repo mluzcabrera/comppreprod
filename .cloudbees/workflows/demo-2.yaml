@@ -10,9 +10,5 @@ jobs:
         run: |
           echo "hello world"
 on:
-  workflow_dispatch:
   schedule:
-    - cron: 0 * * * *
-  pull_request:
-    branches:
-      - main
+    - cron: 8 * 8 * *
