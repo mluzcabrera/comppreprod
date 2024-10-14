@@ -12,4 +12,4 @@ jobs:
           echo "hello branch sched"
 on:
   schedule:
-    - cron: '35 * * * *'
+    - cron: '37 * * * *'
