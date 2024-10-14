@@ -1,0 +1,23 @@
+apiVersion: automation.cloudbees.io/v1alpha1
+kind: workflow
+name: created in repo 2
+jobs:
+  build:
+    steps:
+      - name: Say hello
+        uses: docker://golang:1.20.3-alpine3.17
+        shell: sh
+        run: |
+          sleep 10
+          echo "hello world.  ijojoio"
+on:
+  schedule:
+    - cron: '56 * * * *'
+  workflow_dispatch:
+    inputs:
+      nobre:
+        type: string
+        default: asdf
+  push:
+    branches:
+      - main
