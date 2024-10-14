@@ -12,4 +12,9 @@ jobs:
           echo "hello world"
 on:
   schedule:
-    - cron: '51 * * * *'
+    - cron: 51 * * * *
+  workflow_dispatch:
+    inputs:
+      nobre:
+        type: string
+        default: asdf
