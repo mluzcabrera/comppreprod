@@ -1,12 +1,6 @@
 apiVersion: automation.cloudbees.io/v1alpha1
 kind: workflow
 name: Demo 3
-
-on:
-  push:
-    tags:
-      - '**'
-
 jobs:
   build:
     steps:
@@ -15,3 +9,13 @@ jobs:
         shell: sh
         run: |
           echo "hello world.    "
+    needs:
+      - mlcb
+  mlcb:
+    delegates: cloudbees-io/manual-approval/custom-job.yml@v1
+    with:
+      approvers: 4b7f53fc-d4fe-11ec-bb55-42010a83ae55
+      disallowLaunchByUser: false
+      instruction: ""
+on:
+  workflow_dispatch:
