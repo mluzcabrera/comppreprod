@@ -11,8 +11,7 @@ jobs:
           sleep 100
           echo "hello world.  ijojoio"
 on:
-  schedule:
-    - cron: 14 * * * *
+
   workflow_dispatch:
     inputs:
       nobre:
